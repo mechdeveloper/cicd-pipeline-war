@@ -1,6 +1,6 @@
 # Step 1: Install OpenJDK
 sudo apt update
-sudo apt install default-jdk
+sudo apt install default-jdk -y
 
 # Step 2: Create Tomcat User
 # First, create a new tomcat group:
@@ -34,10 +34,11 @@ cat /etc/systemd/system/tomcat.service
 
 sudo systemctl daemon-reload
 sudo systemctl start tomcat
-sudo systemctl status tomcat
+# sudo systemctl status tomcat
 
 # Step 6: Adjust the Firewall and Test the Tomcat Server
 sudo ufw allow 8080
+curl http://localhost:8080
 
 sudo systemctl enable tomcat
 
