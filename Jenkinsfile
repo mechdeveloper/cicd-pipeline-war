@@ -18,7 +18,4 @@ node{
         sh "rm -r '/opt/tomcat/webapps/ROOT'"
         sh "cp 'target/ROOT.war' '/opt/tomcat/webapps'"
     }
-    stage('Test Deployment'){
-        sh "curl http://localhost:8080"
-    }
 }
